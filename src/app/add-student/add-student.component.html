@@ -1,0 +1,36 @@
+<div style="margin-top: 100px; display: flex;justify-content: center;align-items: center;" class="container">
+    <form [formGroup]="profileForm" (ngSubmit)="information()">
+        <div class="student-info gap-2">
+            
+            <label style="padding-left: 200px;" for="firstName">Name :</label>
+            <input style="margin-right: 31px;" formControlName="firstName" type="text" id="firstName" name="firstName" required>
+            
+            
+            <label style="padding-left: 200px;" for="email">Email :</label>
+            <input style="margin-right: 31px;" formControlName="email" type="email" id="email" name="email" required>
+
+            <label style="padding-left: 200px;" for="contact">Contact :</label>
+            <input style="margin-right: 31px;" formControlName="contact" type="contact" id="contact" name="contact" required>
+
+            <div style="display: flex;">
+                <label style="padding-left: 200px;" for="Gender">Gender :</label>
+                <select formControlName="Gender" style="margin-left: 75px;width: 400px;" class="form-select mb-3" aria-label="Default select example">
+                    <option selected>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                  </select>
+            </div>
+
+            <label style="padding-left: 200px;" for="city">City :</label>
+            <input style="margin-right: 31px;" formControlName="city" type="city" id="city" name="city" required>
+            
+            <label style="padding-left: 200px;" for="city">DOB :</label>
+            <input style="margin-right: 31px;" formControlName="dob" type="dob" id="dob" name="dob" required>
+
+        </div>
+       <div class="mt-4" style="display: flex;align-items: center;justify-content: center;gap: 20px;">
+        <button routerLink="" type="button" class="btn btn-outline-dark">Cancel</button>
+        <button (click)="information()" routerLink="" type="button" class="btn btn-dark">{{this.db.submitButton}}</button>
+       </div>
+    </form>
+</div>
